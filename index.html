@@ -4,11 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Timbl widget testing</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+
+      button {
+        padding: 16px;
+        margin: 5px;
+        font-size: 16px;
+      }
+    </style>
   </head>
   <body>
+    <h2>Click on the below customer ids to open the widget</h2>
     <script>
       // Array of customer IDs
-      var customerIds = [102261, 1576802, 103, 104, 105];
+      var customerIds = [
+        102261, 1576802, 103, 104, 105, 1576802, 103, 104, 105,
+      ];
 
       // Function to handle button clicks and redirect to customer-id.html
       function redirectToCustomerPage(customerId) {

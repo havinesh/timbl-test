@@ -16,8 +16,18 @@
       defer
       src="https://testcdn.cleandesk.co.in/js/widget_logout.js"
     ></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+    </style>
   </head>
   <body>
+    <h2>Customer widget</h2>
+    <h3>Customer ID: <span id="customer-id"></span></h3>
     <script>
       // Get the query string from the current URL
       const queryString = window.location.search;
@@ -43,6 +53,8 @@
       );
 
       document.body.appendChild(cleandeskElement);
+
+      document.getElementById("customer-id").innerHTML = customerId;
     </script>
   </body>
 </html>
