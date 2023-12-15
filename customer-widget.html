@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer widget</title>
+
+    <script>
+      document.write(
+        "<script type='text/javascript' src='https://testcdn.cleandesk.co.in/js/clean_ai_bot.js?q=" +
+          Date.now() +
+          "'><\/script>"
+      );
+    </script>
+    <script
+      defer
+      src="https://testcdn.cleandesk.co.in/js/widget_logout.js"
+    ></script>
+  </head>
+  <body>
+    <script>
+      // Get the query string from the current URL
+      const queryString = window.location.search;
+
+      // Create a URLSearchParams object from the query string
+      const params = new URLSearchParams(queryString);
+
+      // Retrieve the customer ID and any other attributes from the query string
+      const customerId = params.get("customer_id");
+
+      const cleandeskElement = document.createElement("cleandesk-chat-widget");
+
+      // Set attributes individually
+      cleandeskElement.setAttribute("access_by_id", customerId);
+      cleandeskElement.setAttribute("access_by_type", "customer");
+      cleandeskElement.setAttribute(
+        "app_id",
+        "BnQ2qF9E81yy9WZoDdN3HRm3-L4YsGFE9ZrXPZnsufPQo9rNOaVH4iXB0XaQeuaVrIuwexhDbfDn_vwXPXMnpg"
+      );
+      cleandeskElement.setAttribute(
+        "app_secret",
+        "Bsf1qIfxvSaPyUDA4TDwEjxqdYMTl7Ql_S8dwmHF7g1ZT0o1Zstgwq3CZLIIXGFxzFcvDBfq3rU8V7YxRZzN43ZzOdBEskfcTCKz8vgDg8wosMPPCmzJ0jNYgs9sc3Uhq5z6kutVI5a_hHzJUKnogSM78tNAldp6fcYk8HXgxDg"
+      );
+
+      document.body.appendChild(cleandeskElement);
+    </script>
+  </body>
+</html>
