@@ -6,22 +6,26 @@
 
     <title>Chat widget testing</title>
 
+    <!-- <script
+      defer
+      src="https://testcdn.cleandesk.co.in/js/clean_ai_bot.js?ver<%=DateTime.Now.Ticks.ToString()%>"
+      type="text/javascript"
+    ></script> -->
+    <!--     <script defer src="https://testcdn.cleandesk.co.in/js/widget_logout.js"></script> -->
     <script>
       document.write(
-        "<script type='text/javascript' src='https://testcdn.cleandesk.co.in/public/build/clean_ai_bot.js?q=" +
+        "<script type='text/javascript' src='https://testcdn.cleandesk.co.in/js/clean_ai_bot.js?q=" +
           Date.now() +
           "'><\/script>"
       );
     </script>
+
     <script defer src="./logout.js"></script>
 
     <style>
       body {
         margin: 0;
         padding: 0;
-        background-image: url('asset/YouWebsite.svg');
-        background-size: cover;
-        background-repeat: no-repeat;
       }
     </style>
   </head>
@@ -31,12 +35,9 @@
       <cleandesk-chat-widget
         app_id="BnQ2qF9E81yy9WZoDdN3HRm3-L4YsGFE9ZrXPZnsufPQo9rNOaVH4iXB0XaQeuaVrIuwexhDbfDn_vwXPXMnpg"
         app_secret="dS-kW8Qd-NjwU6DkGBJ0x6ica96ov4EJ4Hebs0_d5uc9qBCXgJC1I4FWB-KMvpDGIqm5wVzZPOZKx-Iso8qmg4fGBpMe-QS2L0VWGSDwX8iFWD2WXk0fqjGe2nJVpphW2IXxfWYHJ84toWD-8t1eRmoM7rjjd-Bn1Q2bsF1CJLY"
-        access_by_id="2015095"
+        access_by_id="2000237"
         access_by_type="customer"
       ></cleandesk-chat-widget>
-      <!-- access_by_id="2015095" -->
-
-      <button onclick="CleandeskWidgetLogout()">click to logout</button>
     </div>
   </body>
 </html>

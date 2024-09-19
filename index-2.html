@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timbl widget testing</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+
+      button {
+        padding: 16px;
+        margin: 5px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Click on the below customer ids to open the widget</h2>
+    <script>
+      // Array of customer IDs
+      var customerIds = [
+        102261, 1576802, 103, 104, 105, 1576802, 103, 104, 105,
+      ];
+
+      // Function to handle button clicks and redirect to customer-id.html
+      function redirectToCustomerPage(customerId) {
+        window.location.href = "customer-widget.html?customer_id=" + customerId;
+      }
+
+      // Dynamically create buttons for each customer ID
+      var buttonsContainer = document.createElement("div");
+      document.body.appendChild(buttonsContainer);
+
+      for (var i = 0; i < customerIds.length; i++) {
+        var button = document.createElement("button");
+        button.textContent = "Customer " + customerIds[i];
+        button.onclick = (function (id) {
+          return function () {
+            redirectToCustomerPage(id);
+          };
+        })(customerIds[i]);
+
+        buttonsContainer.appendChild(button);
+      }
+    </script>
+  </body>
+</html>
