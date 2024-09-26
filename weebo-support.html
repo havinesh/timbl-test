@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Timbl support widget testing</title>
+
+    <script>
+      document.write(
+        "<script type='text/javascript' src='https://testcdn.cleandesk.co.in/public/build/clean_ai_bot.js?q=" +
+          Date.now() +
+          "'><\/script>"
+      );
+    </script>
+    <script
+      defer
+      src="https://testcdn.cleandesk.co.in/js/widget_logout.js"
+    ></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <cleandesk-chat-widget
+        app_id="QSqDhVHq25ZRQt5RDmRkYgvzW1Awp8vD_4OryYRX__OOTqOjg4OXMoyAcONkXQJtQmrLUcK3RJszcTy8eCzhAQ"
+        app_secret="R_udooOWcH-Nu1Fei2ea5dJKY6pZWWz1T8peL1IUO6r5D9NgVoZAlPBQK1xpgHxP1vvzLrSW7ZpYp_586U8vdlZlSJdZCshQ-x_03Bs5-1_IGUOsLt6quowewkymujeIv1CO1u2N3SL79UjEBPhxQcn1cG-hyxfvrdqc1z-mM6k"
+        access_by_id="9985361657"
+      ></cleandesk-chat-widget>
+
+      <button onclick="CleandeskWidgetLogout()">click to logout</button>
+    </div>
+  </body>
+</html>
