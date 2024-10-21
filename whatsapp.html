@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Embedded Signup</title>
+</head>
+<body>
+
+  <h1>WhatsApp Embedded Signup</h1>
+
+  <!-- WhatsApp Signup Button -->
+  <button onclick="launchWhatsAppSignup()">Sign Up with WhatsApp</button>
+
+  <!-- Facebook SDK Script -->
+  <script>
+    window.fbAsyncInit = function () {
+      // JavaScript SDK configuration and setup
+      FB.init({
+        appId: 1608318079685011, // Facebook App ID
+        cookie: true, // enable cookies
+        xfbml: true, // parse social plugins on this page
+        version: 'v21.0' // Graph API version
+      });
+    };
+
+    // Load the JavaScript SDK asynchronously
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Facebook Login with JavaScript SDK
+    function launchWhatsAppSignup() {
+      // Conversion tracking code
+      if (typeof fbq !== 'undefined') {
+        fbq('trackCustom', 'WhatsAppOnboardingStart', {
+          appId: 1608318079685011,
+          feature: 'whatsapp_embedded_signup'
+        });
+      }
+
+      // Launch Facebook login
+      FB.login(function (response) {
+        if (response.authResponse) {
+          const code = response.authResponse.code;
+          // Send the code to your backend for server-to-server token exchange
+          console.log('Authorization Code:', code);
+        } else {
+          console.log('User cancelled login or did not fully authorize.');
+        }
+      }, {
+        config_id: 1216758419408381, // Replace with your WhatsApp configuration ID
+        response_type: 'code', // System User access token
+        override_default_response_type: true,
+        extras: {
+          setup: {
+            // Add any prefilled data here if needed
+          }
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
